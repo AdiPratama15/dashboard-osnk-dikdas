@@ -1,47 +1,75 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: #ffffff;
-  color: #000;
+  margin: 0;
+  background: #f5f6fa;
+  color: #333;
   transition: 0.3s;
-}
-
-body.dark {
-  background: #121212;
-  color: #fff;
 }
 
 h1 {
   text-align: center;
 }
 
+/* Controls */
 .controls {
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 input, select, button {
   padding: 8px;
   font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
+button {
+  cursor: pointer;
+  background: #3498db;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: #3498db;
+  color: white;
 }
 
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
+/* Top 3 */
 #top3 {
   margin: 15px 0;
   font-size: 16px;
+  font-weight: bold;
+}
+
+/* Pagination */
+#pagination {
+  margin-top: 10px;
+  text-align: center;
 }
 
 #pagination button {
@@ -49,8 +77,45 @@ th, td {
   padding: 5px 10px;
 }
 
+/* Loading & Empty */
+#loading {
+  text-align: center;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #fff;
+}
+
+body.dark table {
+  background: #1e1e1e;
+}
+
+body.dark th {
+  background: #333;
+}
+
+body.dark td {
+  border: 1px solid #555;
+}
+
+body.dark input,
+body.dark select {
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   table {
-    font-size: 12px;
+    display: block;
+    overflow-x: auto;
   }
 }
