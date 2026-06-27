@@ -15,19 +15,18 @@ const filters = {
 };
 
 // ================= LOAD DATA =================
-fetch("data.json")
-  .then(res => res.json())
-  .then(json => {
-    // Bersihkan data malformed (baris CSV yang salah parsing)
-    const VALID_CABANG = ['IPA', 'IPS', 'Matematika'];
-    data = json.filter(item =>
-      item.Nama && item.Sekolah &&
-      VALID_CABANG.includes(item.Cabang)
-    );
-    filteredData = data;
-    populateProvinsiFilter();
-    updateUI();
-  });
+// Data dimuat dari data.js (window.osnData) — tidak pakai fetch,
+// sehingga bekerja di mana saja: buka file langsung, GitHub Pages, dll.
+(function initData() {
+  const VALID_CABANG = ['IPA', 'IPS', 'Matematika'];
+  data = (window.osnData || []).filter(item =>
+    item.Nama && item.Sekolah &&
+    VALID_CABANG.includes(item.Cabang)
+  );
+  filteredData = data;
+  populateProvinsiFilter();
+  updateUI();
+})();
 
 // ================= POPULATE FILTER PROVINSI =================
 function populateProvinsiFilter() {
