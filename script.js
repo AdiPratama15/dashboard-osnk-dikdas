@@ -61,6 +61,40 @@ function getSchoolInfo(item) {
   };
 }
 
+// ================= JENJANG (SD/MI/SMP/MTs) DETECTION =================
+// SD & MI itu sederajat (keduanya jenjang dasar), begitu juga SMP & MTs
+// (keduanya jenjang menengah pertama) — tapi nama sekolahnya berbeda,
+// jadi tidak bisa dicocokkan dengan satu kata kunci saja.
+//
+// Pola nama yang sudah diverifikasi terhadap seluruh data:
+//   MTs / MTsN / MTsS dst.  → selalu di AWAL nama sekolah   → "MTS"
+//   MI  / MIN  / MIS  dst.  → selalu di AWAL nama sekolah   → "MI"
+//   SMP / SMPN / SMPIT dst. → kata "SMP" ada di nama sekolah → "SMP"
+//   SD  / SDN  / SDIT  dst. → kata "SD" ada di nama sekolah  → "SD"
+// Beberapa nama ditulis lengkap tanpa singkatan (mis. "Sekolah Menengah
+// Pertama Negeri 1...", "Sekolah Rakyat Dasar...", "...Junior High School"),
+// sehingga ditangani lewat fallback kata "MENENGAH"/"JUNIOR HIGH" (→ SMP)
+// dan "DASAR" (→ SD). Cek MTs/MI dilakukan lebih dulu sehingga tidak
+// pernah keliru tertangkap oleh fallback ini.
+function getJenjangCategory(item) {
+  const nama = (item.Sekolah || '').toUpperCase().trim();
+  if (nama.startsWith('MTS')) return 'MTS';
+  if (nama.startsWith('MI')) return 'MI';
+  if (nama.includes('SMP')) return 'SMP';
+  if (nama.includes('SD')) return 'SD';
+  if (nama.includes('MENENGAH') || nama.includes('JUNIOR HIGH')) return 'SMP';
+  if (nama.includes('DASAR')) return 'SD';
+  return null; // nama sekolah tidak memuat indikator jenjang (cth: PKBM, pesantren)
+}
+
+function matchesJenjangFilter(item, filterValue) {
+  if (!filterValue) return true;
+  const cat = getJenjangCategory(item);
+  if (filterValue === 'SD_MI') return cat === 'SD' || cat === 'MI';
+  if (filterValue === 'SMP_MTS') return cat === 'SMP' || cat === 'MTS';
+  return cat === filterValue; // 'SD' | 'SMP' | 'MI' | 'MTS'
+}
+
 // ================= APPLY FILTERS (GABUNGAN) =================
 // Filter state gabungan — tidak saling override satu sama lain
 function applyFilters() {
@@ -71,8 +105,7 @@ function applyFilters() {
       item.Sekolah.toLowerCase().includes(kw) ||
       (item['Kab/Kota'] || '').toLowerCase().includes(kw);
 
-    const matchJenjang = !filters.jenjang ||
-      item.Sekolah.toUpperCase().includes(filters.jenjang);
+    const matchJenjang = matchesJenjangFilter(item, filters.jenjang);
 
     const matchCabang = !filters.cabang || item.Cabang === filters.cabang;
 
