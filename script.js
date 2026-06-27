@@ -1,167 +1,146 @@
 let data = [];
 let filteredData = [];
-
 let currentPage = 1;
-const rowsPerPage = 20;
+const rowsPerPage = 5;
 
-let chart;
+const tableBody = document.querySelector("#table tbody");
+const searchInput = document.getElementById("search");
+const filterSekolah = document.getElementById("filterSekolah");
+const pagination = document.getElementById("pagination");
+const top3Div = document.getElementById("top3");
+const loading = document.getElementById("loading");
+const noData = document.getElementById("noData");
 
-// ================= LOAD DATA =================
+// FETCH DATA
 fetch("data.json")
   .then(res => res.json())
   .then(json => {
     data = json;
     filteredData = data;
+
+    initFilter();
     updateUI();
+
+    loading.style.display = "none";
   });
 
-// ================= TABLE =================
-function renderTable(data) {
-  const start = (currentPage - 1) * rowsPerPage;
-  const paginated = data.slice(start, start + rowsPerPage);
+// INIT FILTER SEKOLAH
+function initFilter() {
+  const sekolahSet = [...new Set(data.map(d => d.Sekolah))];
 
-  const table = document.getElementById("tableBody");
-  table.innerHTML = "";
-
-  paginated.forEach(item => {
-    table.innerHTML += `
-      <tr>
-        <td>${item.Nama}</td>
-        <td>${item.Sekolah}</td>
-        <td>${item["Kab/Kota"]}</td>
-        <td>${item.Provinsi}</td>
-      </tr>
-    `;
+  sekolahSet.forEach(sekolah => {
+    const opt = document.createElement("option");
+    opt.value = sekolah;
+    opt.textContent = sekolah;
+    filterSekolah.appendChild(opt);
   });
-
-  renderPagination(data.length);
 }
 
-// ================= PAGINATION =================
-function renderPagination(total) {
-  const pageCount = Math.ceil(total / rowsPerPage);
-  const container = document.getElementById("pagination");
+// UPDATE UI
+function updateUI() {
+  renderTable();
+  renderPagination();
+  renderTop3();
+}
 
-  container.innerHTML = "";
+// RENDER TABLE
+function renderTable() {
+  tableBody.innerHTML = "";
 
-  for (let i = 1; i <= pageCount; i++) {
-    container.innerHTML += `
-      <button onclick="goToPage(${i})">${i}</button>
+  const start = (currentPage - 1) * rowsPerPage;
+  const pageData = filteredData.slice(start, start + rowsPerPage);
+
+  if (pageData.length === 0) {
+    noData.classList.remove("hidden");
+  } else {
+    noData.classList.add("hidden");
+  }
+
+  pageData.forEach((item, index) => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${start + index + 1}</td>
+      <td>${item.Nama}</td>
+      <td>${item.Sekolah}</td>
+      <td>${item.Nilai}</td>
     `;
+
+    tableBody.appendChild(tr);
+  });
+}
+
+// PAGINATION
+function renderPagination() {
+  pagination.innerHTML = "";
+  const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+
+    if (i === currentPage) btn.style.fontWeight = "bold";
+
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      renderTable();
+    });
+
+    pagination.appendChild(btn);
   }
 }
 
-function goToPage(page) {
-  currentPage = page;
-  renderTable(filteredData);
-}
+// SEARCH (DEBOUNCE)
+let timeout;
+searchInput.addEventListener("input", () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(applyFilter, 300);
+});
 
-// ================= SEARCH (DEBOUNCE) =================
-function debounce(func, delay) {
-  let timeout;
-  return function (...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), delay);
-  };
-}
+// FILTER SEKOLAH
+filterSekolah.addEventListener("change", applyFilter);
 
-document.getElementById("search").addEventListener("input",
-  debounce((e) => {
-    const keyword = e.target.value.toLowerCase();
+function applyFilter() {
+  const keyword = searchInput.value.toLowerCase();
+  const sekolah = filterSekolah.value;
 
-    filteredData = data.filter(item =>
-      item.Nama.toLowerCase().includes(keyword) ||
-      item.Sekolah.toLowerCase().includes(keyword)
+  filteredData = data.filter(d => {
+    return (
+      d.Nama.toLowerCase().includes(keyword) &&
+      (sekolah === "" || d.Sekolah === sekolah)
     );
-
-    currentPage = 1;
-    updateUI();
-  }, 300)
-);
-
-// ================= FILTER =================
-document.getElementById("filterJenjang").addEventListener("change", (e) => {
-  const val = e.target.value;
-
-  filteredData = data.filter(item =>
-    val === "" || item.Sekolah.includes(val)
-  );
+  });
 
   currentPage = 1;
   updateUI();
-});
-
-// ================= CHART =================
-function renderChart(data) {
-  const count = {};
-
-  data.forEach(item => {
-    count[item.Sekolah] = (count[item.Sekolah] || 0) + 1;
-  });
-
-  const sorted = Object.entries(count)
-    .sort((a,b) => b[1]-a[1])
-    .slice(0, 10);
-
-  const labels = sorted.map(x => x[0]);
-  const values = sorted.map(x => x[1]);
-
-  if (chart) chart.destroy();
-
-  chart = new Chart(document.getElementById("chartSekolah"), {
-    type: "bar",
-    data: {
-      labels,
-      datasets: [{
-        label: "Top Sekolah",
-        data: values
-      }]
-    }
-  });
 }
 
-// ================= TOP 3 =================
-function renderTop3(data) {
-  const count = {};
-
-  data.forEach(item => {
-    count[item.Sekolah] = (count[item.Sekolah] || 0) + 1;
-  });
-
-  const top = Object.entries(count)
-    .sort((a,b) => b[1]-a[1])
+// TOP 3
+function renderTop3() {
+  const top = [...filteredData]
+    .sort((a, b) => b.Nilai - a.Nilai)
     .slice(0, 3);
 
-  const medals = ["🥇", "🥈", "🥉"];
-
-  document.getElementById("top3").innerHTML =
-    top.map((item, i) =>
-      `<div>${medals[i]} ${item[0]} (${item[1]})</div>`
-    ).join("");
+  top3Div.innerHTML = "🏆 Top 3: " +
+    top.map(d => `${d.Nama} (${d.Nilai})`).join(", ");
 }
 
-// ================= EXPORT =================
-function exportExcel() {
-  const ws = XLSX.utils.json_to_sheet(filteredData);
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "OSN-K");
-
-  XLSX.writeFile(wb, "hasil_osnk.xlsx");
-}
-
-// ================= DARK MODE =================
-function toggleDark() {
+// DARK MODE
+document.getElementById("toggleDark").addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  localStorage.setItem("darkMode", document.body.classList.contains("dark"));
-}
+});
 
-if (localStorage.getItem("darkMode") === "true") {
-  document.body.classList.add("dark");
-}
+// EXPORT CSV (Excel)
+document.getElementById("exportExcel").addEventListener("click", () => {
+  let csv = "Nama,Sekolah,Nilai\n";
 
-// ================= UPDATE UI =================
-function updateUI() {
-  renderTable(filteredData);
-  renderChart(filteredData);
-  renderTop3(filteredData);
-}
+  filteredData.forEach(d => {
+    csv += `${d.Nama},${d.Sekolah},${d.Nilai}\n`;
+  });
+
+  const blob = new Blob([csv], { type: "text/csv" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "data.csv";
+  a.click();
+});
