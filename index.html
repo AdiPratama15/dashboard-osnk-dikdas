@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard OSN-K</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- SheetJS -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<h1>Dashboard OSN-K Dikdas</h1>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Cari nama/sekolah...">
+
+  <select id="filterJenjang">
+    <option value="">Semua Jenjang</option>
+    <option value="SD">SD</option>
+    <option value="SMP">SMP</option>
+  </select>
+
+  <button onclick="toggleDark()">🌙</button>
+  <button onclick="exportExcel()">Export Excel</button>
+</div>
+
+<div id="top3"></div>
+
+<canvas id="chartSekolah"></canvas>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Sekolah</th>
+      <th>Kab/Kota</th>
+      <th>Provinsi</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<div id="pagination"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
