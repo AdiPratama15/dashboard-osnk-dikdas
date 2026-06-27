@@ -2,39 +2,62 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard Peserta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard OSN-K Dikdas</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
-<h1>Dashboard Peserta</h1>
+<h1>Dashboard OSN-K Dikdas</h1>
 
 <div class="controls">
-  <input type="text" id="search" placeholder="Cari nama...">
-  
-  <select id="filterSekolah">
-    <option value="">Semua Sekolah</option>
+  <input type="text" id="search" placeholder="🔍 Cari nama / sekolah / kota...">
+
+  <select id="filterJenjang">
+    <option value="">Semua Jenjang</option>
+    <option value="SD">SD</option>
+    <option value="SMP">SMP</option>
   </select>
 
-  <button id="toggleDark">🌙 Dark Mode</button>
-  <button id="exportExcel">Export Excel</button>
+  <select id="filterCabang">
+    <option value="">Semua Mata Pelajaran</option>
+    <option value="IPA">IPA</option>
+    <option value="IPS">IPS</option>
+    <option value="Matematika">Matematika</option>
+  </select>
+
+  <select id="filterProvinsi">
+    <option value="">Semua Provinsi</option>
+    <!-- Diisi dinamis dari data -->
+  </select>
+
+  <div class="controls-right">
+    <button class="btn-icon" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+    <button class="btn-export" onclick="exportExcel()">⬇ Export Excel</button>
+  </div>
 </div>
 
+<div class="section-label">🏆 Top 3 Sekolah Terbanyak Meloloskan Peserta</div>
+<div class="ranking-note">
+  ℹ️ Peringkat dihitung per sekolah unik (NPSN/lokasi). Sekolah jaringan seperti "IT ROBBANI" dengan cabang di beda kota dihitung terpisah — bukan digabung seolah satu sekolah.
+</div>
 <div id="top3"></div>
 
-<div id="loading">Loading data...</div>
-<div id="noData" class="hidden">Data tidak ditemukan</div>
+<canvas id="chartSekolah"></canvas>
 
-<table id="table">
+<table>
   <thead>
     <tr>
-      <th>No</th>
-      <th>Nama</th>
+      <th>Nama Peserta</th>
+      <th>Mapel</th>
       <th>Sekolah</th>
-      <th>Nilai</th>
+      <th>Kab/Kota</th>
+      <th>Provinsi</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody id="tableBody"></tbody>
 </table>
 
 <div id="pagination"></div>
