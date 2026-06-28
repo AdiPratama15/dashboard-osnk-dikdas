@@ -62066,8 +62066,6 @@ window.osnData = [
   {
     "Cabang": "",
     "Nama": "NANGGAR",
-	"NPSN": "",
-	"Sekolah": "",
     "Kab/Kota": "Kab. Simalungun",
     "Provinsi": "Prov. Sumatera Utara"
   },
