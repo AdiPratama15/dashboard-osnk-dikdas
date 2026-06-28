@@ -52529,11 +52529,11 @@ window.osnData = [
   },
   {
     "Cabang": "IPA",
-    "Nama": "\"AUFA RIFATULJANNAH",
-    "NPSN": "HF\"",
-    "Sekolah": "10107026",
-    "Kab/Kota": "UPTD SMP NEGERI 1 BIREUEN",
-    "Provinsi": "Kab. Bireuen"
+    "Nama": "AUFA RIFATULJANNAH",
+    "NPSN": "10107026",
+    "Sekolah": "UPTD SMP NEGERI 1 BIREUEN",
+    "Kab/Kota": "Kab. Bireuen",
+    "Provinsi": "Prov. Aceh"
   },
   {
     "Cabang": "IPA",
@@ -54696,28 +54696,28 @@ window.osnData = [
     "Provinsi": "Prov. Papua Pegunungan"
   },
   {
-    "Cabang": "IPA,ALYA RAMADHANI ASMARA PUTRI,20523857,\"UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "ALYA RAMADHANI ASMARA PUTRI,",
+    "NPSN": "20523857",
+    "Sekolah": "UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SMPN 2 JEMBER",
+    "Kab/Kota": "Kab. Jember",
+    "Provinsi": "Prov. Jawa Timur"
   },
   {
-    "Cabang": "PENDIDIKAN SMPN 2 JEMBER\",Kab. Jember,Prov. Jawa Timur",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kab. Jember",
+    "Provinsi": "Prov. Jawa Timur"
   },
   {
-    "Cabang": "IPA,ARETA PUTRI AZALIA,20523857,\"UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "ARETA PUTRI AZALIA",
+    "NPSN": "20523857",
+    "Sekolah": "UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SMPN 2 JEMBER",
+    "Kab/Kota": "Kab. Jember",
+    "Provinsi": "Prov. Jawa Timur"
   },
   {
     "Cabang": "PENDIDIKAN SMPN 2 JEMBER\",Kab. Jember,Prov. Jawa Timur",
@@ -54736,12 +54736,12 @@ window.osnData = [
     "Provinsi": "Prov. Jawa Timur"
   },
   {
-    "Cabang": "IPA,MARSYA ELVARETTA ILIYOSA,20523874,\"UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "MARSYA ELVARETTA ILIYOSA",
+    "NPSN": "20523874",
+    "Sekolah": "UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SMPN 1 RAMBIPUJI",
+    "Kab/Kota": "Kab. Jember",
+    "Provinsi": "Prov. Jawa Timur"
   },
   {
     "Cabang": "PENDIDIKAN SMPN 1 RAMBIPUJI\",Kab. Jember,Prov. Jawa Timur",
@@ -55848,12 +55848,12 @@ window.osnData = [
     "Provinsi": "Prov. Jambi"
   },
   {
-    "Cabang": "IPA,ADITYA DWI PRAYOGA,70000385,\"SMP SWASTA BUMITAMA KARYA BAKTI AGRO",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "ADITYA DWI PRAYOGA",
+    "NPSN": "70000385",
+    "Sekolah": "SMP SWASTA BUMITAMA KARYA BAKTI AGRO SEJAHTERA",
+    "Kab/Kota": "KAB. KETAPANG",
+    "Provinsi": "PROV. KALIMANTAN BARAT"
   },
   {
     "Cabang": "SEJAHTERA\",Kab. Ketapang,Prov. Kalimantan Barat",
@@ -56803,7 +56803,7 @@ window.osnData = [
     "Cabang": "IPA",
     "Nama": "MUHAMAD AGUNG SAEPUTRA",
     "NPSN": "70033243",
-    "Sekolah": "\"SMP SWASTA ISLAM HIDAYATUL FALAH KAB. LAMANDAU\"",
+    "Sekolah": "SMP SWASTA ISLAM HIDAYATUL FALAH KAB. LAMANDAU",
     "Kab/Kota": "Kab. Lamandau",
     "Provinsi": "Prov. Kalimantan Tengah"
   },
@@ -60976,12 +60976,12 @@ window.osnData = [
     "Provinsi": "Prov. Maluku Utara"
   },
   {
-    "Cabang": "IPA,HANIF IRSYAD AL FARRAASY,69937296,\"SMP ISLAM TERPADU HARAPAN UMMAT",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "HANIF IRSYAD AL FARRAASY",
+    "NPSN": "69937296",
+    "Sekolah": "SMP ISLAM TERPADU HARAPAN UMMAT PURBALINGGA",
+    "Kab/Kota": "Kab. Purbalingga",
+    "Provinsi": "Prov. Jawa Tengah"
   },
   {
     "Cabang": "PURBALINGGA\",Kab. Purbalingga,Prov. Jawa Tengah",
@@ -62056,20 +62056,20 @@ window.osnData = [
     "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "IPA,RAFITHA SAVANA,10202514,\"SMP SWASTA MUHAMMADIYAH - 21 DOLOK BATU",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "RAFITHA SAVANA",
+    "NPSN": "10202514",
+    "Sekolah": "SMP SWASTA MUHAMMADIYAH - 21 DOLOK BATU NANGGAR",
+    "Kab/Kota": "Kab. Simalungun",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "NANGGAR\",Kab. Simalungun,Prov. Sumatera Utara",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "",
+    "Nama": "NANGGAR",
+    "Kab/Kota": "Kab. Simalungun",
+    "Provinsi": "Prov. Sumatera Utara"
+    "Kab/Kota": "Kab. Simalungun",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
     "Cabang": "IPA",
@@ -62400,20 +62400,20 @@ window.osnData = [
     "Provinsi": "Prov. Sulawesi Selatan"
   },
   {
-    "Cabang": "IPA,CHRISTINE MAUDY EFRUAN,60403576,\"SMP YPPK SEMINARI PETRUS VAN DIEPEN",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA"",
+    "Nama": "CHRISTINE MAUDY EFRUAN",
+    "NPSN": "60403576",
+    "Sekolah": "SMP YPPK SEMINARI PETRUS VAN DIEPEN KABUPATEN SORONG",
+    "Kab/Kota": "Kab. Sorong",
+    "Provinsi": "Prov. Papua Barat Daya"
   },
   {
-    "Cabang": "KABUPATEN SORONG\",Kab. Sorong,Prov. Papua Barat Daya",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kab. Sorong",
+    "Provinsi": "Prov. Papua Barat Daya"
   },
   {
     "Cabang": "IPA",
@@ -64416,20 +64416,20 @@ window.osnData = [
     "Provinsi": "Prov. Kalimantan Timur"
   },
   {
-    "Cabang": "IPA,ARKA DEVATA NAVAGARH,69979985,\"SMP BUNGA MATAHARI INTERNATIONAL SCHOOL",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "ARKA DEVATA NAVAGARH",
+    "NPSN": "69979985",
+    "Sekolah": "SMP BUNGA MATAHARI INTERNATIONAL SCHOOL KOTA BANDA ACEH",
+    "Kab/Kota": "Kota Banda Aceh",
+    "Provinsi": "Prov. Aceh"
   },
   {
-    "Cabang": "KOTA BANDA ACEH\",Kota Banda Aceh,Prov. Aceh",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kota Banda Aceh",
+    "Provinsi": "Prov. Aceh"
   },
   {
     "Cabang": "IPA",
@@ -66960,20 +66960,20 @@ window.osnData = [
     "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "IPA,SAHAT ARIS MARCHELINO SARAGIH,10211808,\"SMP SWASTA RK BINTANG TIMUR",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "SAHAT ARIS MARCHELINO SARAGIH",
+    "NPSN": "10211808",
+    "Sekolah": "SMP SWASTA RK BINTANG TIMUR",
+    "Kab/Kota": "Kota Pematangsiantar",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "PEMATANGSIANTAR\",Kota Pematangsiantar,Prov. Sumatera Utara",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kota Pematangsiantar",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
     "Cabang": "IPA",
@@ -67640,20 +67640,20 @@ window.osnData = [
     "Provinsi": "Prov. Jawa Tengah"
   },
   {
-    "Cabang": "IPA,MUHAMMAD WIRA ADINEGARA,20361977,\"SMP MUHAMMADIYAH PROGRAM KHUSUS",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPA",
+    "Nama": "MUHAMMAD WIRA ADINEGARA",
+    "NPSN": "20361977",
+    "Sekolah": "SMP MUHAMMADIYAH PROGRAM KHUSUS KOTTABARAT SURAKARTA",
+    "Kab/Kota": "Kota Surakarta",
+    "Provinsi": "Prov. Jawa Tengah"
   },
   {
-    "Cabang": "KOTTABARAT SURAKARTA\",Kota Surakarta,Prov. Jawa Tengah",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kota Surakarta",
+    "Provinsi": "Prov. Jawa Tengah"
   },
   {
     "Cabang": "IPA",
@@ -68416,20 +68416,20 @@ window.osnData = [
     "Provinsi": "Prov. Aceh"
   },
   {
-    "Cabang": "IPS,NOVIZA AMELIA,70055480,\"Sekolah Rakyat Menengah Pertama Terintegrasi 10 Aceh",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPS",
+    "Nama": "NOVIZA AMELIA",
+    "NPSN": "70055480",
+    "Sekolah": "Sekolah Rakyat Menengah Pertama Terintegrasi 10 Aceh Selatan",
+    "Kab/Kota": "Kab. Aceh Selatan",
+    "Provinsi": "Prov. Aceh"
   },
   {
-    "Cabang": "Selatan\",Kab. Aceh Selatan,Prov. Aceh",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kab. Aceh Selatan",
+    "Provinsi": "Prov. Aceh"
   },
   {
     "Cabang": "IPS",
@@ -68720,36 +68720,36 @@ window.osnData = [
     "Provinsi": "Prov. Nusa Tenggara Timur"
   },
   {
-    "Cabang": "IPS,AFIFAH HAZIMAH,70049812,\"SMP SWASTA DARUSSALAM ISLAMIC SCHOOL",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPS",
+    "Nama": "AFIFAH HAZIMAH",
+    "NPSN": "70049812",
+    "Sekolah": "SMP SWASTA DARUSSALAM ISLAMIC SCHOOL",
+    "Kab/Kota": "Kab. Asahan",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "KISARAN\",Kab. Asahan,Prov. Sumatera Utara",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kab. Asahan",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "IPS,AURA ARYNDA SIGALINGGING,70049812,\"SMP SWASTA DARUSSALAM ISLAMIC SCHOOL",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPS",
+    "Nama": "AURA ARYNDA SIGALINGGING",
+    "NPSN": "70049812",
+    "Sekolah": "SMP SWASTA DARUSSALAM ISLAMIC SCHOOL KISARAN",
+    "Kab/Kota": "Kab. Asahan",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "KISARAN\",Kab. Asahan,Prov. Sumatera Utara",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kab. Asahan",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
     "Cabang": "IPS",
@@ -68760,20 +68760,20 @@ window.osnData = [
     "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "IPS,FARHAN AHMAD RIJAL SINAGA,70046329,\"SMP SWASTA IT NURUL IKHWAN ISLAMIC BOARDING",
-    "Nama": "",
-    "NPSN": "",
-    "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Cabang": "IPS",
+    "Nama": "FARHAN AHMAD RIJAL SINAGA",
+    "NPSN": "70046329",
+    "Sekolah": "SMP SWASTA IT NURUL IKHWAN ISLAMIC BOARDING SCHOOL",
+    "Kab/Kota": "Kab. Asahan",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
-    "Cabang": "SCHOOL\",Kab. Asahan,Prov. Sumatera Utara",
+    "Cabang": "",
     "Nama": "",
     "NPSN": "",
     "Sekolah": "",
-    "Kab/Kota": "",
-    "Provinsi": ""
+    "Kab/Kota": "Kab. Asahan",
+    "Provinsi": "Prov. Sumatera Utara"
   },
   {
     "Cabang": "IPS",
