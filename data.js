@@ -62400,7 +62400,7 @@ window.osnData = [
     "Provinsi": "Prov. Sulawesi Selatan"
   },
   {
-    "Cabang": "IPA"",
+    "Cabang": "IPA",
     "Nama": "CHRISTINE MAUDY EFRUAN",
     "NPSN": "60403576",
     "Sekolah": "SMP YPPK SEMINARI PETRUS VAN DIEPEN KABUPATEN SORONG",
