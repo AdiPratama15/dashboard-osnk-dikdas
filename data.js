@@ -55853,7 +55853,7 @@ window.osnData = [
     "NPSN": "70000385",
     "Sekolah": "SMP SWASTA BUMITAMA KARYA BAKTI AGRO SEJAHTERA",
     "Kab/Kota": "KAB. KETAPANG",
-    "Provinsi": "PROV. KALIMANTAN BARAT"
+    "Provinsi": "Prov. Kalimantan Barat"
   },
   {
     "Cabang": "SEJAHTERA\",Kab. Ketapang,Prov. Kalimantan Barat",
