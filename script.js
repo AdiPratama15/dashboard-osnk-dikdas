@@ -357,3 +357,40 @@ function updateUI() {
   renderChart(filteredData);
   renderTop3(filteredData);
 }
+
+// ================= DONASI: POPUP BERKALA =================
+// Badge kecil (link + QR) selalu tampil di pojok layar lewat CSS (.donate-badge).
+// Popup permohonan donasi baru muncul setelah pengunjung berada di halaman
+// selama 5 menit, lalu berulang setiap 5 menit berikutnya — tidak terus-menerus.
+const DONATE_URL = "https://saweria.co/SenseiTama";
+const DONATE_POPUP_INTERVAL_MS = 5 * 60 * 1000; // 5 menit
+
+function showDonatePopup() {
+  const overlay = document.getElementById("donatePopupOverlay");
+  if (overlay) overlay.classList.add("show");
+}
+
+function closeDonatePopup() {
+  const overlay = document.getElementById("donatePopupOverlay");
+  if (overlay) overlay.classList.remove("show");
+}
+
+(function initDonatePopupSchedule() {
+  // Munculkan popup pertama setelah 5 menit, lalu ulangi setiap 5 menit.
+  setTimeout(() => {
+    showDonatePopup();
+    setInterval(showDonatePopup, DONATE_POPUP_INTERVAL_MS);
+  }, DONATE_POPUP_INTERVAL_MS);
+
+  // Tutup popup bila area gelap di luar kotak diklik.
+  document.addEventListener("click", (e) => {
+    if (e.target && e.target.id === "donatePopupOverlay") {
+      closeDonatePopup();
+    }
+  });
+
+  // Tutup popup dengan tombol Escape.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDonatePopup();
+  });
+})();

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard OSN-K Dikdas</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 </head>
@@ -63,7 +63,30 @@
 
 <div id="pagination"></div>
 
+<!-- ===== Donasi: badge kecil permanen (selalu tampil, ukuran kecil) ===== -->
+<a id="donateBadge" class="donate-badge" href="https://saweria.co/SenseiTama"
+   target="_blank" rel="noopener noreferrer"
+   title="Dukung dashboard ini lewat Saweria">
+  <img src="QR_Code_Saweria.png" alt="QR Donasi Saweria" class="donate-badge-qr">
+  <span class="donate-badge-text">☕ Dukung Kami<br><small>Donasi via Saweria ↗</small></span>
+</a>
+
+<!-- ===== Donasi: popup berkala (muncul tiap 5 menit) ===== -->
+<div id="donatePopupOverlay" class="donate-popup-overlay">
+  <div class="donate-popup-box" role="dialog" aria-label="Permohonan donasi">
+    <button type="button" class="donate-popup-close" onclick="closeDonatePopup()" aria-label="Tutup">✕</button>
+    <div class="donate-popup-icon">💖</div>
+    <h3>Suka dengan Dashboard&nbsp;Ini?</h3>
+    <p>Data OSN-K Dikdas ini dikumpulkan &amp; dirawat secara mandiri tanpa sponsor. Kalau dashboard ini bermanfaat buat kamu, yuk traktir kopi lewat Saweria 🙏</p>
+    <img src="QR_Code_Saweria.png" alt="QR Donasi Saweria" class="donate-popup-qr">
+    <a class="donate-popup-btn" href="https://saweria.co/SenseiTama" target="_blank" rel="noopener noreferrer">
+      Donasi via Saweria ↗
+    </a>
+    <p class="donate-popup-link">atau buka manual: <a href="https://saweria.co/SenseiTama" target="_blank" rel="noopener noreferrer">saweria.co/SenseiTama</a></p>
+  </div>
+</div>
+
 <script src="data.js?v=2"></script>
-<script src="script.js?v=2"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
